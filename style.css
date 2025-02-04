@@ -1,0 +1,134 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fae1dd;
+    animation: changeColor 10s infinite;
+    font-family: 'Mochiy Pop P One', sans-serif;
+  }
+
+input#open {
+    display: none;
+  }
+
+  .valentines-day-card {
+    position: relative;
+    width: 300px;
+    height:300px;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: .3s;
+  }
+  
+  .card-front {
+    position: relative;
+    background-color: #fff0f3;
+    width: 300px;
+    height:300px;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,0.3);
+    transition: .3s;
+  }
+  
+  .card-front:before {
+    content:"";
+    background-image: url('rose2.png');
+    background-size: cover;
+    position: absolute;
+    width: 320px;
+    height: 320px;
+
+    top: 10px;
+    left: 10px;
+    
+  }
+
+  
+  .card-inside {
+    position: absolute;
+    background-color: #fff0f3;
+    width: 320px;
+    height:320px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
+  }
+  
+  .open {
+    position: absolute;
+    width: 300px;
+    height:300px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:6;
+    cursor: pointer;
+  }
+
+  #open:checked ~ .card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  }
+  
+  #open:checked ~ .card-front:before {
+    z-index:5;
+    background-color: #fff0f3;
+    width:300px;
+    height:300px;
+    top:0;
+    left:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
+  }
+
+  .note {
+    position: relative;
+    width: 220px;
+    height: 195px;
+    background-color: #fff0f3;
+    top:70px;
+    left:40px;
+    color: #333;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+  }
+  
+  .note:before, .note:after {
+    position: absolute;
+    content:"";
+    background-color: #ad001c;
+    width: 40px;
+    height:40px;
+  }
+  
+  .note:before {
+    transform: rotate(-45deg);
+    top:-9px;
+    left:89.5px;
+  }
+  
+  .note:after {
+    border-radius:50%;
+    top:-24px;
+    left:75px;
+    box-shadow:30px 0 #ad001c;
+  }
+  .text-one{
+    padding: 5px;
+    text-align: justify;
+    overflow: hidden;;
+  }
+
+  @keyframes changeColor {
+    0% { background-color: #faf2d3; }
+    25% { background-color: #eda087; }
+    50% { background-color: #fecf9c; }
+    75% { background-color: #eda087; }
+    100% { background-color: #faf2d3; }
+}
+
+  
